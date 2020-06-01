@@ -5,9 +5,9 @@ import com.querydsl.core.types.Projections
 import com.querydsl.jpa.impl.JPAQueryFactory
 import org.springframework.web.bind.annotation.*
 import pers.zhangyu.compose.CounterVO
-import pers.zhangyu.compose.QUserCounter
-import pers.zhangyu.compose.UserCounter
-import pers.zhangyu.compose.UserCounterRepo
+import pers.zhangyu.compose.pojo.QUserCounter
+import pers.zhangyu.compose.pojo.UserCounter
+import pers.zhangyu.compose.repo.UserCounterRepo
 import java.util.function.Consumer
 
 /**
@@ -23,16 +23,13 @@ class QueryDSL constructor(
 
     private val userCounter = QUserCounter.userCounter
 
-
     /**
      * queryDsl查询方式1
      */
     @GetMapping("/query")
     fun query() {
-
         val result = queryFactory.select(userCounter.counterCode).from(userCounter).where(userCounter.counterCode.eq("0002")).fetchAll()
         print(result)
-
         //查询并将结果封装至dto中
         val dtoList = queryFactory
                 .select(Projections.constructor(CounterVO::class.java, userCounter.counterCode, userCounter.counterName))

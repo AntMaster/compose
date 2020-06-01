@@ -5,9 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import pers.zhangyu.compose.CounterRepo;
-import pers.zhangyu.compose.UserCounter;
-import pers.zhangyu.compose.UserCounterRepo;
+import pers.zhangyu.compose.repo.CounterRepo;
+import pers.zhangyu.compose.pojo.UserCounter;
+import pers.zhangyu.compose.repo.UserCounterRepo;
 
 /**
  * @Anthor:Fangtao

@@ -1,4 +1,4 @@
-package pers.zhangyu.compose
+package pers.zhangyu.compose.pojo
 
 import java.io.Serializable
 import javax.persistence.Entity
